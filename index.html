@@ -3,116 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title}mobile📱</title>
+<title>mobile📱</title>
 
 <style>
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Arial,sans-serif;
+  overflow:hidden;
 
-  /* PRO MIXED GRADIENT (warm + cool) */
-  background: linear-gradient(135deg,
+  background:linear-gradient(135deg,
     #ff6f00,
     #ffb199,
     #1da1f2,
     #0f2027);
 }
 
-/* glowing orbs */
-body::before {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: #ff6f00;
-  filter: blur(150px);
-  top: -150px;
-  left: -150px;
-  opacity: 0.25;
+/* CARD */
+.box{
+  width:50%; /* % ашигласан */
+  
+  padding:5%;
+  border-radius:8%;
+
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(15px);
+
+  text-align:center;
+
+  border:1px solid rgba(255,255,255,0.2);
 }
 
-body::after {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: #00e5ff;
-  filter: blur(150px);
-  bottom: -150px;
-  right: -150px;
-  opacity: 0.25;
+h1{
+  margin:0;
+  font-size:6vw; /* дэлгэцээс хамаарч жижиг */
+  color:white;
 }
 
-/* MAIN CARD */
-.box {
-  position: relative;
-  z-index: 1;
-  width: 320px;
-  padding: 28px;
-  border-radius: 22px;
-
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255,255,255,0.25);
-
-  text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-
-  animation: float 3s ease-in-out infinite;
+p{
+  color:white;
+  font-size:3.5vw;
 }
 
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+.btn{
+  width:100%;
+  padding:4%;
+  margin-top:4%;
+
+  border:none;
+  border-radius:5%;
+
+  color:white;
+  font-size:3.5vw;
+  font-weight:bold;
 }
 
-h1 {
-  margin: 0;
-  font-size: 22px;
-  color: white;
-  text-shadow: 0 0 10px rgba(255,255,255,0.3);
+.fb{
+  background:linear-gradient(90deg,#1877f2,#00e5ff);
 }
 
-p {
-  color: #eee;
-  margin-bottom: 18px;
-}
-
-/* BUTTONS */
-.btn {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 14px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  color: white;
-  transition: 0.3s;
-  letter-spacing: 0.5px;
-}
-
-/* cool button */
-.fb {
-  background: linear-gradient(90deg, #1877f2, #00e5ff);
-  box-shadow: 0 0 15px rgba(0,229,255,0.4);
-}
-
-/* warm button */
-.yt {
-  background: linear-gradient(90deg, #ff6f00, #ff3d00);
-  box-shadow: 0 0 15px rgba(255,111,0,0.4);
-}
-
-.btn:hover {
-  transform: scale(1.06);
-  filter: brightness(1.2);
+.yt{
+  background:linear-gradient(90deg,#ff6f00,#ff3d00);
 }
 </style>
 </head>
@@ -120,18 +74,20 @@ p {
 <body>
 
 <div class="box">
+
 <h1>Сайн уу 👋</h1>
 <p>Миний social хаягууд</p>
 
-  <button class="btn fb"
-    onclick="window.location.href='https://www.facebook.com/badaruugan.uugan'">
-   📘Facebook
-  </button>
+<button class="btn fb"
+onclick="window.location.href='https://www.facebook.com/badaruugan.uugan'">
+📘 Facebook
+</button>
 
-  <button class="btn yt"
-    onclick="window.location.href='https://www.youtube.com/@Badar-Uugan23_mlbb'">
-    ▶YouTube 
-  </button>
+<button class="btn yt"
+onclick="window.location.href='https://www.youtube.com/@Badar-Uugan23_mlbb'">
+▶ YouTube
+</button>
+
 </div>
 
 </body>
