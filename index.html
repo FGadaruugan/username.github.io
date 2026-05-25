@@ -1,138 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="mn">
 <head>
 <meta charset="UTF-8">
-<title>Mini Minecraft Mobile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title}mobile📱</title>
 
 <style>
 body {
   margin: 0;
-  background: #87CEEB;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+
+  /* PRO MIXED GRADIENT (warm + cool) */
+  background: linear-gradient(135deg,
+    #ff6f00,
+    #ffb199,
+    #1da1f2,
+    #0f2027);
+}
+
+/* glowing orbs */
+body::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: #ff6f00;
+  filter: blur(150px);
+  top: -150px;
+  left: -150px;
+  opacity: 0.25;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: #00e5ff;
+  filter: blur(150px);
+  bottom: -150px;
+  right: -150px;
+  opacity: 0.25;
+}
+
+/* MAIN CARD */
+.box {
+  position: relative;
+  z-index: 1;
+  width: 320px;
+  padding: 28px;
+  border-radius: 22px;
+
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.25);
+
   text-align: center;
-  font-family: Arial;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+
+  animation: float 3s ease-in-out infinite;
 }
 
-canvas {
-  background: #bde0fe;
-  border: 2px solid black;
-  display: block;
-  margin: auto;
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
 }
 
-/* control buttons */
-.controls {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+h1 {
+  margin: 0;
+  font-size: 22px;
+  color: white;
+  text-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
 
-button {
-  width: 60px;
-  height: 60px;
-  font-size: 20px;
-  margin: 5px;
+p {
+  color: #eee;
+  margin-bottom: 18px;
+}
+
+/* BUTTONS */
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+}
+
+/* cool button */
+.fb {
+  background: linear-gradient(90deg, #1877f2, #00e5ff);
+  box-shadow: 0 0 15px rgba(0,229,255,0.4);
+}
+
+/* warm button */
+.yt {
+  background: linear-gradient(90deg, #ff6f00, #ff3d00);
+  box-shadow: 0 0 15px rgba(255,111,0,0.4);
+}
+
+.btn:hover {
+  transform: scale(1.06);
+  filter: brightness(1.2);
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="game" width="400" height="400"></canvas>
+<div class="box">
+<h1>Сайн уу 👋</h1>
+<p>Миний social хаягууд</p>
 
-<<div style="
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: grid;
-  grid-template-columns: 60px 60px 60px;
-  grid-template-rows: 60px 60px;
-  gap: 5px;
-">
+  <button class="btn fb"
+    onclick="window.location.href='https://www.facebook.com/badaruugan.uugan'">
+   📘Facebook
+  </button>
 
-  <div></div>
-
-  <button onclick="player.y -= 10">⬆️</button>
-
-  <div></div>
-
-  <button onclick="player.x -= 10">⬅️</button>
-
-  <button onclick="placeBlock()">🧱</button>
-
-  <button onclick="player.x += 10">➡️</button>
-
-  <div></div>
-
-  <button onclick="player.y += 10">⬇️</button>
-
-  <div></div>
-
+  <button class="btn yt"
+    onclick="window.location.href='https://www.youtube.com/@Badar-Uugan23_mlbb'">
+    ▶YouTube 
+  </button>
 </div>
-<script>
-const canvas = document.getElementById("game");
-const ctx = canvas.getContext("2d");
-
-// player
-let player = { x: 50, y: 50, size: 20 };
-
-// blocks (Minecraft world)
-let blocks = [];
-
-// movement
-function moveLeft()  { player.x -= 10; }
-function moveRight() { player.x += 10; }
-function moveUp()    { player.y -= 10; }
-function moveDown()  { player.y += 10; }
-
-// place block
-function placeBlock() {
-  blocks.push({ x: player.x, y: player.y + 20 });
-}
-
-// draw game
-function draw() {
-  ctx.clearRect(0, 0, 400, 400);
-
-  // ground
-  ctx.fillStyle = "brown";
-  for (let i = 0; i < 400; i += 20) {
-    ctx.fillRect(i, 380, 20, 20);
-  }
-
-  // blocks
-  ctx.fillStyle = "gray";
-  for (let b of blocks) {
-    ctx.fillRect(b.x, b.y, 20, 20);
-  }
-
-  // player
-  ctx.fillStyle = "green";
-  ctx.fillRect(player.x, player.y, player.size, player.size);
-
-  requestAnimationFrame(draw);
-}
-
-draw();
-</script>
-
-</body>
-</html>  </style>
-</head>
-
-<body>
-
-  <div class="box">
-    <h1>Сайн уу 👋</h1>
-    <p>Г.Бадар-Ууганы Facebook болон YouTube <p>
-
-    <button onclick="window.location.href='https://www.facebook.com/badaruugan.uugan'">
-      Facebook руу орох
-    </button>
-    <button onclick="window.location.href='https://www.youtube.com/@Badar-Uugan23_mlbb'">
-      Youbute руу орох
-    </button>
-  </div>
 
 </body>
 </html>
