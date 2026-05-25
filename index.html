@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Website</title>
+
+  <style>
+    body {
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      margin-top: 100px;
+      padding: 30px;
+    }
+
+    button {
+      background: white;
+      color: #2a5298;
+      border: none;
+      padding: 12px 25px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h1>Сайн уу 👋</h1>
+    <p>Энэ бол энгийн HTML + CSS + JavaScript код.</p>
+
+    <button onclick="showMessage()">
+      Дар
+    </button>
+  </div>
+
+  <script>
+    function showMessage() {
+      alert("Чи товч дарлаа 😄");
+    }
+  </script>
+
+</body>
+</html>
