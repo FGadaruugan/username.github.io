@@ -3,71 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>mobile📱</title>
+
+<title>Social Links 📱</title>
 
 <style>
+
+/* BODY */
 body{
   margin:0;
   height:100vh;
+
   display:flex;
   justify-content:center;
   align-items:center;
-  font-family:Arial,sans-serif;
-  overflow:hidden;
 
-  background:linear-gradient(135deg,
+  font-family:Arial,sans-serif;
+
+  background:linear-gradient(
+    135deg,
     #ff6f00,
     #ffb199,
     #1da1f2,
-    #0f2027);
+    #0f2027
+  );
+
+  background-size:400% 400%;
+  animation:bgMove 10s ease infinite;
+
+  overflow:hidden;
+}
+
+/* хөдөлгөөнт background */
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
 /* CARD */
 .box{
-  width:50%; /* % ашигласан */
-  
-  padding:5%;
-  border-radius:8%;
+  width:80%;
+  max-width:320px;
+
+  padding:25px;
+  border-radius:25px;
 
   background:rgba(255,255,255,0.12);
   backdrop-filter:blur(15px);
 
+  border:1px solid rgba(255,255,255,0.2);
+
   text-align:center;
 
-  border:1px solid rgba(255,255,255,0.2);
+  box-shadow:0 8px 25px rgba(0,0,0,0.3);
+
+  animation:pop 1s ease;
 }
 
+/* card animation */
+@keyframes pop{
+  from{
+    transform:scale(0.7);
+    opacity:0;
+  }
+
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+/* PROFILE IMAGE */
+.profile{
+  width:90px;
+  height:90px;
+
+  border-radius:50%;
+
+  border:3px solid white;
+
+  object-fit:cover;
+
+  margin-bottom:15px;
+}
+
+/* TITLE */
 h1{
   margin:0;
-  font-size:6vw; /* дэлгэцээс хамаарч жижиг */
   color:white;
+  font-size:30px;
 }
 
+/* TEXT */
 p{
   color:white;
-  font-size:3.5vw;
+  opacity:0.9;
+  margin-bottom:20px;
 }
 
+/* BUTTON */
 .btn{
   width:100%;
-  padding:4%;
-  margin-top:4%;
+
+  padding:14px;
+  margin-top:12px;
 
   border:none;
-  border-radius:5%;
+  border-radius:15px;
 
   color:white;
-  font-size:3.5vw;
+  font-size:16px;
   font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.3s;
 }
 
+/* hover effect */
+.btn:hover{
+  transform:scale(1.05);
+}
+
+/* Facebook */
 .fb{
-  background:linear-gradient(90deg,#1877f2,#00e5ff);
+  background:linear-gradient(
+    90deg,
+    #1877f2,
+    #00c6ff
+  );
 }
 
-.yt{
-  background:linear-gradient(90deg,#ff6f00,#ff3d00);
+/* TikTok */
+.tk{
+  background:linear-gradient(
+    90deg,
+    #000000,
+    #ff0050
+  );
 }
+
+/* Instagram */
+.ig{
+  background:linear-gradient(
+    135deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+}
+
 </style>
 </head>
 
@@ -75,17 +162,32 @@ p{
 
 <div class="box">
 
+<!-- зураг -->
+<img 
+class="profile"
+src="https://i.imgur.com/E8pOOCs.jpeg"
+alt="profile">
+
 <h1>Сайн уу 👋</h1>
+
 <p>Миний social хаягууд</p>
 
 <button class="btn fb"
-onclick="window.location.href='https://www.facebook.com/share/1ETGM5C4Vz/'">
-📘 Facebook
+onclick="window.location.href='https://www.facebook.com/share/1HDsCc9Z5n/'">
+
+Facebook
 </button>
 
-<button class="btn yt"
-onclick="window.location.href='https://www.youtube.com/@Badar-Uugan23_mlbb'">
-▶ YouTube
+<button class="btn tk"
+onclick="window.location.href='https://www.tiktok.com/@queen_anna2200?_r=1&_t=ZS-96p1KjbRCES'">
+
+TikTok
+</button>
+
+<button class="btn ig"
+onclick="window.location.href='https://www.instagram.com/huka_hulan15?igsh=ajR1Z3B3aDN1enBj'">
+
+Instagram
 </button>
 
 </div>
